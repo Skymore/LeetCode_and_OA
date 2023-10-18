@@ -4,7 +4,7 @@ using namespace std;
 
 map<int,long long> pi;
 
-int main()
+int main2()
 {
     int n,p=0;
     cin >> n;
