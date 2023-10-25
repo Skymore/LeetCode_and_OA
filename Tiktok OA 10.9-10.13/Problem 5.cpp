@@ -52,7 +52,7 @@ vector<int> min_comm_ele(vector<int> &v) {
 }
 
 // Driver Code
-int main() {
+int main2() {
     int N = 5;
     vector<int> a = {4, 3, 3, 4, 2};
     auto ans = min_comm_ele(a);
