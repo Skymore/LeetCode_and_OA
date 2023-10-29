@@ -1,20 +1,19 @@
 //
 // Created by 陶睿 on 10/25/23.
 //
-#include <vector>
-#include <map>
 #include <algorithm>
 #include <iostream>
-
+#include <map>
+#include <vector>
 
 using namespace std;
 
 class Solution {
-public:
-    vector<int> fullBloomFlowers(vector<vector<int>> &flowers, vector<int> &people) {
+   public:
+    vector<int> fullBloomFlowers(vector<vector<int>>& flowers, vector<int>& people) {
         map<int, int> diff;
         diff[0] = 0;
-        for (vector<int> &f: flowers) {
+        for (vector<int>& f : flowers) {
             diff[f[0]]++;
             diff[f[1] + 1]--;
         }
@@ -22,20 +21,19 @@ public:
         vector<int> pos;
         vector<int> prefix;
         int curr = 0;
-        for (auto &[u, v]: diff) {
+        for (auto& [u, v] : diff) {
             pos.push_back(u);
             curr += v;
             prefix.push_back(curr);
         }
         vector<int> ans;
-        for (int person: people) {
+        for (int person : people) {
             int i = int(upper_bound(pos.begin(), pos.end(), person) - pos.begin() - 1);
             ans.push_back(prefix[i]);
         }
         return ans;
     }
 };
-
 
 // Initialize a sorted-map data structure difference with 0: 0.
 // Iterate over each flower = [start, end] in flowers:

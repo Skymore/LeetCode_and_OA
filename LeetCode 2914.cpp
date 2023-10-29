@@ -1,27 +1,21 @@
-class Solution
-{
-public:
-    int minChanges(string s)
-    {
+class Solution {
+   public:
+    int minChanges(string s) {
         int n = s.size();
         vector<vector<int>> dp(n + 1, vector<int>(2, INT_MAX));
         dp[0][0] = dp[0][1] = 0;
 
-        for (int i = 2; i <= n; i += 2)
-        {
+        for (int i = 2; i <= n; i += 2) {
             int ones = 0, zeros = 0;
-            for (int j = i - 2; j < i; ++j)
-            {
+            for (int j = i - 2; j < i; ++j) {
                 if (s[j] == '1')
                     ++ones;
                 else
                     ++zeros;
             }
 
-            for (int cur = 0; cur < 2; ++cur)
-            {
-                for (int last = 0; last < 2; ++last)
-                {
+            for (int cur = 0; cur < 2; ++cur) {
+                for (int last = 0; last < 2; ++last) {
                     int cost = (cur == 0) ? ones : zeros;
                     dp[i][cur] = min(dp[i][cur], dp[i - 2][last] + cost);
                 }
