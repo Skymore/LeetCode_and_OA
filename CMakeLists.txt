@@ -3,4 +3,4 @@ project(LC)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(LC "Amazon_OA/amazon_2.cpp" LeetCode_cpp/3030.cpp)
+add_executable(LC YiZhouOA/p2.cpp)
