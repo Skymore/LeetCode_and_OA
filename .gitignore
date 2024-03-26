@@ -1,2 +1,8 @@
-# Project exclude paths
-/cmake-build-debug/
+# 忽略所有名为cmake-build-debug的目录
+cmake-build-debug/
+
+# 忽略.idea目录
+.idea/
+
+# 忽略.vscode目录
+.vscode/
