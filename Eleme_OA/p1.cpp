@@ -6,13 +6,10 @@ using namespace std;
 int main() {
     int n, m;
     vector<int> a(n);
-    // cin >> n >> m;
-    n = 5;
-    m = 3;
-    a = {1, 10, 9, 4, 7};
+    cin >> n >> m;
     
     for (int i = 0; i < n; i++) {
-        // cin >> a[i];
+         cin >> a[i];
         a[i] = (a[i] + m - 1) / m;
     }
     
